@@ -1,2 +1,7 @@
-﻿SELECT * FROM UserAccounts;
+﻿
+
+
+
+/* Shows Tables */
 SELECT * FROM UserDetails;
+SELECT * FROM UserAccounts;
