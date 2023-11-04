@@ -17,19 +17,23 @@ namespace EVEDRI_online_food_ordering
         string[] courseMealsIndexZero = { "Course 1", "Course 2", "Course 3" };
         string[] drinksIndexOne = { "Drink 1", "Drink 2", "Drink 3" };
         string[] specialtiesIndexTwo = { "Special1", "Special2", "Special3" };
-        public OrderingForm()
+        int currentUserID = 0;
+        string currentUserName = "";
+        public OrderingForm(int user_id, string user_name)
         {
             InitializeComponent();
             this.CenterToScreen();
             this.comboBox1.SelectedIndex = 0;
             this.comboBox2.SelectedIndex = 0;
+            currentUserID = user_id;
+            currentUserName = user_name;
         }
 
         private void button2_Click(object sender, EventArgs e)
         {
-            // return to product page button
+            // return to products page button
             this.Hide();
-            var productsPage = new Homepage();
+            var productsPage = new Homepage(currentUserID, currentUserName);
             productsPage.Show();
         }
 

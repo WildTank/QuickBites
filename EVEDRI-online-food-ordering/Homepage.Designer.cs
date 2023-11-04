@@ -168,11 +168,11 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label3.Font = new System.Drawing.Font("Bauhaus 93", 28F);
+            this.label3.Font = new System.Drawing.Font("Berlin Sans FB", 28F);
             this.label3.ForeColor = System.Drawing.Color.White;
             this.label3.Location = new System.Drawing.Point(3, 9);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(212, 43);
+            this.label3.Size = new System.Drawing.Size(194, 42);
             this.label3.TabIndex = 10;
             this.label3.Text = "Quick Bites";
             this.label3.Click += new System.EventHandler(this.label3_Click);

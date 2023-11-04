@@ -28,18 +28,14 @@ namespace EVEDRI_online_food_ordering
             string passwordInput = this.textBox2.Text;
             var user = db.UserAccounts.Where(u => u.username == usernameInput).FirstOrDefault();
             //  ^^^ the first row that has matching username, is null if none
-            try
+            if (user != null)
             {
                 if (user.pass == passwordInput)
                 {
                     this.Hide();
-                    var productsPage = new Homepage();
+                    var productsPage = new Homepage(user.id, user.username);
                     productsPage.Show();
                 }
-            }
-            catch (System.NullReferenceException)
-            {
-                // pass
             }
         }
 
