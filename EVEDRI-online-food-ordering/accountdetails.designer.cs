@@ -36,6 +36,9 @@ namespace EVEDRI_online_food_ordering
     partial void InsertUserDetail(UserDetail instance);
     partial void UpdateUserDetail(UserDetail instance);
     partial void DeleteUserDetail(UserDetail instance);
+    partial void InsertOrder(Order instance);
+    partial void UpdateOrder(Order instance);
+    partial void DeleteOrder(Order instance);
     #endregion
 		
 		public accountdetailsDataContext() : 
@@ -81,6 +84,14 @@ namespace EVEDRI_online_food_ordering
 			get
 			{
 				return this.GetTable<UserDetail>();
+			}
+		}
+		
+		public System.Data.Linq.Table<Order> Orders
+		{
+			get
+			{
+				return this.GetTable<Order>();
 			}
 		}
 	}
@@ -243,6 +254,8 @@ namespace EVEDRI_online_food_ordering
 		
 		private string _email;
 		
+		private EntitySet<Order> _Orders;
+		
 		private EntityRef<UserAccount> _UserAccount;
 		
     #region Extensibility Method Definitions
@@ -267,6 +280,7 @@ namespace EVEDRI_online_food_ordering
 		
 		public UserDetail()
 		{
+			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
 			this._UserAccount = default(EntityRef<UserAccount>);
 			OnCreated();
 		}
@@ -415,6 +429,19 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserDetail_Order", Storage="_Orders", ThisKey="id", OtherKey="customer_id")]
+		public EntitySet<Order> Orders
+		{
+			get
+			{
+				return this._Orders;
+			}
+			set
+			{
+				this._Orders.Assign(value);
+			}
+		}
+		
 		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_UserDetail", Storage="_UserAccount", ThisKey="id", OtherKey="id", IsForeignKey=true)]
 		public UserAccount UserAccount
 		{
@@ -445,6 +472,193 @@ namespace EVEDRI_online_food_ordering
 						this._id = default(int);
 					}
 					this.SendPropertyChanged("UserAccount");
+				}
+			}
+		}
+		
+		public event PropertyChangingEventHandler PropertyChanging;
+		
+		public event PropertyChangedEventHandler PropertyChanged;
+		
+		protected virtual void SendPropertyChanging()
+		{
+			if ((this.PropertyChanging != null))
+			{
+				this.PropertyChanging(this, emptyChangingEventArgs);
+			}
+		}
+		
+		protected virtual void SendPropertyChanged(String propertyName)
+		{
+			if ((this.PropertyChanged != null))
+			{
+				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
+			}
+		}
+		
+		private void attach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserDetail = this;
+		}
+		
+		private void detach_Orders(Order entity)
+		{
+			this.SendPropertyChanging();
+			entity.UserDetail = null;
+		}
+	}
+	
+	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Orders")]
+	public partial class Order : INotifyPropertyChanging, INotifyPropertyChanged
+	{
+		
+		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
+		
+		private int _order_id;
+		
+		private System.Nullable<int> _customer_id;
+		
+		private string _order_items;
+		
+		private System.Nullable<double> _total_price;
+		
+		private EntityRef<UserDetail> _UserDetail;
+		
+    #region Extensibility Method Definitions
+    partial void OnLoaded();
+    partial void OnValidate(System.Data.Linq.ChangeAction action);
+    partial void OnCreated();
+    partial void Onorder_idChanging(int value);
+    partial void Onorder_idChanged();
+    partial void Oncustomer_idChanging(System.Nullable<int> value);
+    partial void Oncustomer_idChanged();
+    partial void Onorder_itemsChanging(string value);
+    partial void Onorder_itemsChanged();
+    partial void Ontotal_priceChanging(System.Nullable<double> value);
+    partial void Ontotal_priceChanged();
+    #endregion
+		
+		public Order()
+		{
+			this._UserDetail = default(EntityRef<UserDetail>);
+			OnCreated();
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int order_id
+		{
+			get
+			{
+				return this._order_id;
+			}
+			set
+			{
+				if ((this._order_id != value))
+				{
+					this.Onorder_idChanging(value);
+					this.SendPropertyChanging();
+					this._order_id = value;
+					this.SendPropertyChanged("order_id");
+					this.Onorder_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customer_id", DbType="Int")]
+		public System.Nullable<int> customer_id
+		{
+			get
+			{
+				return this._customer_id;
+			}
+			set
+			{
+				if ((this._customer_id != value))
+				{
+					if (this._UserDetail.HasLoadedOrAssignedValue)
+					{
+						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
+					}
+					this.Oncustomer_idChanging(value);
+					this.SendPropertyChanging();
+					this._customer_id = value;
+					this.SendPropertyChanged("customer_id");
+					this.Oncustomer_idChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_items", DbType="NVarChar(255)")]
+		public string order_items
+		{
+			get
+			{
+				return this._order_items;
+			}
+			set
+			{
+				if ((this._order_items != value))
+				{
+					this.Onorder_itemsChanging(value);
+					this.SendPropertyChanging();
+					this._order_items = value;
+					this.SendPropertyChanged("order_items");
+					this.Onorder_itemsChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total_price", DbType="Float")]
+		public System.Nullable<double> total_price
+		{
+			get
+			{
+				return this._total_price;
+			}
+			set
+			{
+				if ((this._total_price != value))
+				{
+					this.Ontotal_priceChanging(value);
+					this.SendPropertyChanging();
+					this._total_price = value;
+					this.SendPropertyChanged("total_price");
+					this.Ontotal_priceChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserDetail_Order", Storage="_UserDetail", ThisKey="customer_id", OtherKey="id", IsForeignKey=true)]
+		public UserDetail UserDetail
+		{
+			get
+			{
+				return this._UserDetail.Entity;
+			}
+			set
+			{
+				UserDetail previousValue = this._UserDetail.Entity;
+				if (((previousValue != value) 
+							|| (this._UserDetail.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserDetail.Entity = null;
+						previousValue.Orders.Remove(this);
+					}
+					this._UserDetail.Entity = value;
+					if ((value != null))
+					{
+						value.Orders.Add(this);
+						this._customer_id = value.id;
+					}
+					else
+					{
+						this._customer_id = default(Nullable<int>);
+					}
+					this.SendPropertyChanged("UserDetail");
 				}
 			}
 		}

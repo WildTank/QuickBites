@@ -17,7 +17,17 @@
       <Column Name="homeaddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="contactnumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
       <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UserDetail_Order" Member="Orders" ThisKey="id" OtherKey="customer_id" Type="Order" />
       <Association Name="UserAccount_UserDetail" Member="UserAccount" ThisKey="id" OtherKey="id" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Orders" Member="Orders">
+    <Type Name="Order">
+      <Column Name="order_id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="customer_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="order_items" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="total_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="UserDetail_Order" Member="UserDetail" ThisKey="customer_id" OtherKey="id" Type="UserDetail" IsForeignKey="true" />
     </Type>
   </Table>
 </Database>

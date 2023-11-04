@@ -1,7 +1,1 @@
-﻿
-
-
-
-/* Shows Tables */
-SELECT * FROM UserDetails;
-SELECT * FROM UserAccounts;
+﻿SELECT * FROM Orders WHERE customer_id = 4;
