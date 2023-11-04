@@ -1,0 +1,38 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="QuickBites">
+  <DataContextMoniker Name="/QuickBitesDataContext" />
+  <nestedChildShapes>
+    <classShape Id="5f98dea1-9c41-45af-9507-0f22def9ad3c" absoluteBounds="0.5, 0.5, 2, 1.3862939453125">
+      <DataClassMoniker Name="/QuickBitesDataContext/UserAccount" />
+      <nestedChildShapes>
+        <elementListCompartment Id="90d2c800-9002-4e56-965f-fe5d5617528e" absoluteBounds="0.51499999999999968, 0.96, 1.9700000000000002, 0.8262939453125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="b1fcbad4-7a39-4433-a1b6-ed597c1c6149" absoluteBounds="5.625, 0.5, 2, 2.1554996744791666">
+      <DataClassMoniker Name="/QuickBitesDataContext/UserDetail" />
+      <nestedChildShapes>
+        <elementListCompartment Id="ea8d3af1-9675-459f-be50-a071868932bc" absoluteBounds="5.64, 0.96, 1.9700000000000002, 1.5954996744791665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.19314697265625); (5.625 : 1.19314697265625)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuickBitesDataContext/UserAccount/UserAccount_UserDetail" />
+      <nodes>
+        <classShapeMoniker Id="5f98dea1-9c41-45af-9507-0f22def9ad3c" />
+        <classShapeMoniker Id="b1fcbad4-7a39-4433-a1b6-ed597c1c6149" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="0bce3753-ce0e-4a6f-be55-e6541cbbaebf" absoluteBounds="5.625, 2.875, 2, 1.5785953776041666">
+      <DataClassMoniker Name="/QuickBitesDataContext/Order" />
+      <nestedChildShapes>
+        <elementListCompartment Id="e8522d51-8f4f-4c45-826f-700dc7341412" absoluteBounds="5.6400000000000006, 3.335, 1.9700000000000002, 1.0185953776041665" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(1.5 : 1.8862939453125); (1.5 : 3.66429768880208); (5.625 : 3.66429768880208)]" fixedFrom="Algorithm" fixedTo="Algorithm">
+      <AssociationMoniker Name="/QuickBitesDataContext/UserAccount/UserAccount_Order" />
+      <nodes>
+        <classShapeMoniker Id="5f98dea1-9c41-45af-9507-0f22def9ad3c" />
+        <classShapeMoniker Id="0bce3753-ce0e-4a6f-be55-e6541cbbaebf" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>

@@ -22,8 +22,8 @@ namespace EVEDRI_online_food_ordering
 	using System;
 	
 	
-	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="accountdetails")]
-	public partial class accountdetailsDataContext : System.Data.Linq.DataContext
+	[global::System.Data.Linq.Mapping.DatabaseAttribute(Name="QuickBites")]
+	public partial class QuickBitesDataContext : System.Data.Linq.DataContext
 	{
 		
 		private static System.Data.Linq.Mapping.MappingSource mappingSource = new AttributeMappingSource();
@@ -41,31 +41,31 @@ namespace EVEDRI_online_food_ordering
     partial void DeleteOrder(Order instance);
     #endregion
 		
-		public accountdetailsDataContext() : 
-				base(global::EVEDRI_online_food_ordering.Properties.Settings.Default.accountdetailsConnectionString, mappingSource)
+		public QuickBitesDataContext() : 
+				base(global::EVEDRI_online_food_ordering.Properties.Settings.Default.QuickBitesConnectionString, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public accountdetailsDataContext(string connection) : 
+		public QuickBitesDataContext(string connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public accountdetailsDataContext(System.Data.IDbConnection connection) : 
+		public QuickBitesDataContext(System.Data.IDbConnection connection) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public accountdetailsDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public QuickBitesDataContext(string connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
 		}
 		
-		public accountdetailsDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
+		public QuickBitesDataContext(System.Data.IDbConnection connection, System.Data.Linq.Mapping.MappingSource mappingSource) : 
 				base(connection, mappingSource)
 		{
 			OnCreated();
@@ -108,7 +108,9 @@ namespace EVEDRI_online_food_ordering
 		
 		private string _pass;
 		
-		private EntitySet<UserDetail> _UserDetails;
+		private EntityRef<UserDetail> _UserDetail;
+		
+		private EntitySet<Order> _Orders;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
@@ -124,7 +126,8 @@ namespace EVEDRI_online_food_ordering
 		
 		public UserAccount()
 		{
-			this._UserDetails = new EntitySet<UserDetail>(new Action<UserDetail>(this.attach_UserDetails), new Action<UserDetail>(this.detach_UserDetails));
+			this._UserDetail = default(EntityRef<UserDetail>);
+			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
 			OnCreated();
 		}
 		
@@ -148,7 +151,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_username", DbType="NVarChar(255)")]
 		public string username
 		{
 			get
@@ -168,7 +171,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pass", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_pass", DbType="NVarChar(255)")]
 		public string pass
 		{
 			get
@@ -188,16 +191,45 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_UserDetail", Storage="_UserDetails", ThisKey="id", OtherKey="id")]
-		public EntitySet<UserDetail> UserDetails
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_UserDetail", Storage="_UserDetail", ThisKey="id", OtherKey="id", IsUnique=true, IsForeignKey=false)]
+		public UserDetail UserDetail
 		{
 			get
 			{
-				return this._UserDetails;
+				return this._UserDetail.Entity;
 			}
 			set
 			{
-				this._UserDetails.Assign(value);
+				UserDetail previousValue = this._UserDetail.Entity;
+				if (((previousValue != value) 
+							|| (this._UserDetail.HasLoadedOrAssignedValue == false)))
+				{
+					this.SendPropertyChanging();
+					if ((previousValue != null))
+					{
+						this._UserDetail.Entity = null;
+						previousValue.UserAccount = null;
+					}
+					this._UserDetail.Entity = value;
+					if ((value != null))
+					{
+						value.UserAccount = this;
+					}
+					this.SendPropertyChanged("UserDetail");
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_Order", Storage="_Orders", ThisKey="id", OtherKey="customer_id")]
+		public EntitySet<Order> Orders
+		{
+			get
+			{
+				return this._Orders;
+			}
+			set
+			{
+				this._Orders.Assign(value);
 			}
 		}
 		
@@ -221,13 +253,13 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		private void attach_UserDetails(UserDetail entity)
+		private void attach_Orders(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount = this;
 		}
 		
-		private void detach_UserDetails(UserDetail entity)
+		private void detach_Orders(Order entity)
 		{
 			this.SendPropertyChanging();
 			entity.UserAccount = null;
@@ -254,8 +286,6 @@ namespace EVEDRI_online_food_ordering
 		
 		private string _email;
 		
-		private EntitySet<Order> _Orders;
-		
 		private EntityRef<UserAccount> _UserAccount;
 		
     #region Extensibility Method Definitions
@@ -280,7 +310,6 @@ namespace EVEDRI_online_food_ordering
 		
 		public UserDetail()
 		{
-			this._Orders = new EntitySet<Order>(new Action<Order>(this.attach_Orders), new Action<Order>(this.detach_Orders));
 			this._UserAccount = default(EntityRef<UserAccount>);
 			OnCreated();
 		}
@@ -309,7 +338,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customername", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_customername", DbType="NVarChar(255)")]
 		public string customername
 		{
 			get
@@ -329,7 +358,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_gender", DbType="NVarChar(255)")]
 		public string gender
 		{
 			get
@@ -349,7 +378,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateofbirth", DbType="DateTime")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_dateofbirth", DbType="Date")]
 		public System.Nullable<System.DateTime> dateofbirth
 		{
 			get
@@ -369,7 +398,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_homeaddress", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_homeaddress", DbType="NVarChar(255)")]
 		public string homeaddress
 		{
 			get
@@ -389,7 +418,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contactnumber", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_contactnumber", DbType="NVarChar(255)")]
 		public string contactnumber
 		{
 			get
@@ -409,7 +438,7 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(50)")]
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_email", DbType="NVarChar(255)")]
 		public string email
 		{
 			get
@@ -426,19 +455,6 @@ namespace EVEDRI_online_food_ordering
 					this.SendPropertyChanged("email");
 					this.OnemailChanged();
 				}
-			}
-		}
-		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserDetail_Order", Storage="_Orders", ThisKey="id", OtherKey="customer_id")]
-		public EntitySet<Order> Orders
-		{
-			get
-			{
-				return this._Orders;
-			}
-			set
-			{
-				this._Orders.Assign(value);
 			}
 		}
 		
@@ -459,12 +475,12 @@ namespace EVEDRI_online_food_ordering
 					if ((previousValue != null))
 					{
 						this._UserAccount.Entity = null;
-						previousValue.UserDetails.Remove(this);
+						previousValue.UserDetail = null;
 					}
 					this._UserAccount.Entity = value;
 					if ((value != null))
 					{
-						value.UserDetails.Add(this);
+						value.UserDetail = this;
 						this._id = value.id;
 					}
 					else
@@ -495,18 +511,6 @@ namespace EVEDRI_online_food_ordering
 				this.PropertyChanged(this, new PropertyChangedEventArgs(propertyName));
 			}
 		}
-		
-		private void attach_Orders(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserDetail = this;
-		}
-		
-		private void detach_Orders(Order entity)
-		{
-			this.SendPropertyChanging();
-			entity.UserDetail = null;
-		}
 	}
 	
 	[global::System.Data.Linq.Mapping.TableAttribute(Name="dbo.Orders")]
@@ -515,52 +519,52 @@ namespace EVEDRI_online_food_ordering
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _order_id;
+		private int _id;
 		
 		private System.Nullable<int> _customer_id;
 		
-		private string _order_items;
+		private string _order_item;
 		
 		private System.Nullable<double> _total_price;
 		
-		private EntityRef<UserDetail> _UserDetail;
+		private EntityRef<UserAccount> _UserAccount;
 		
     #region Extensibility Method Definitions
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void Onorder_idChanging(int value);
-    partial void Onorder_idChanged();
+    partial void OnidChanging(int value);
+    partial void OnidChanged();
     partial void Oncustomer_idChanging(System.Nullable<int> value);
     partial void Oncustomer_idChanged();
-    partial void Onorder_itemsChanging(string value);
-    partial void Onorder_itemsChanged();
+    partial void Onorder_itemChanging(string value);
+    partial void Onorder_itemChanged();
     partial void Ontotal_priceChanging(System.Nullable<double> value);
     partial void Ontotal_priceChanged();
     #endregion
 		
 		public Order()
 		{
-			this._UserDetail = default(EntityRef<UserDetail>);
+			this._UserAccount = default(EntityRef<UserAccount>);
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int order_id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int id
 		{
 			get
 			{
-				return this._order_id;
+				return this._id;
 			}
 			set
 			{
-				if ((this._order_id != value))
+				if ((this._id != value))
 				{
-					this.Onorder_idChanging(value);
+					this.OnidChanging(value);
 					this.SendPropertyChanging();
-					this._order_id = value;
-					this.SendPropertyChanged("order_id");
-					this.Onorder_idChanged();
+					this._id = value;
+					this.SendPropertyChanged("id");
+					this.OnidChanged();
 				}
 			}
 		}
@@ -576,7 +580,7 @@ namespace EVEDRI_online_food_ordering
 			{
 				if ((this._customer_id != value))
 				{
-					if (this._UserDetail.HasLoadedOrAssignedValue)
+					if (this._UserAccount.HasLoadedOrAssignedValue)
 					{
 						throw new System.Data.Linq.ForeignKeyReferenceAlreadyHasValueException();
 					}
@@ -589,22 +593,22 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_items", DbType="NVarChar(255)")]
-		public string order_items
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_item", DbType="NVarChar(255)")]
+		public string order_item
 		{
 			get
 			{
-				return this._order_items;
+				return this._order_item;
 			}
 			set
 			{
-				if ((this._order_items != value))
+				if ((this._order_item != value))
 				{
-					this.Onorder_itemsChanging(value);
+					this.Onorder_itemChanging(value);
 					this.SendPropertyChanging();
-					this._order_items = value;
-					this.SendPropertyChanged("order_items");
-					this.Onorder_itemsChanged();
+					this._order_item = value;
+					this.SendPropertyChanged("order_item");
+					this.Onorder_itemChanged();
 				}
 			}
 		}
@@ -629,26 +633,26 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserDetail_Order", Storage="_UserDetail", ThisKey="customer_id", OtherKey="id", IsForeignKey=true)]
-		public UserDetail UserDetail
+		[global::System.Data.Linq.Mapping.AssociationAttribute(Name="UserAccount_Order", Storage="_UserAccount", ThisKey="customer_id", OtherKey="id", IsForeignKey=true)]
+		public UserAccount UserAccount
 		{
 			get
 			{
-				return this._UserDetail.Entity;
+				return this._UserAccount.Entity;
 			}
 			set
 			{
-				UserDetail previousValue = this._UserDetail.Entity;
+				UserAccount previousValue = this._UserAccount.Entity;
 				if (((previousValue != value) 
-							|| (this._UserDetail.HasLoadedOrAssignedValue == false)))
+							|| (this._UserAccount.HasLoadedOrAssignedValue == false)))
 				{
 					this.SendPropertyChanging();
 					if ((previousValue != null))
 					{
-						this._UserDetail.Entity = null;
+						this._UserAccount.Entity = null;
 						previousValue.Orders.Remove(this);
 					}
-					this._UserDetail.Entity = value;
+					this._UserAccount.Entity = value;
 					if ((value != null))
 					{
 						value.Orders.Add(this);
@@ -658,7 +662,7 @@ namespace EVEDRI_online_food_ordering
 					{
 						this._customer_id = default(Nullable<int>);
 					}
-					this.SendPropertyChanged("UserDetail");
+					this.SendPropertyChanged("UserAccount");
 				}
 			}
 		}

@@ -9,7 +9,6 @@ Register Form/Page			[ DATABASE ]
 
 
 REGISTER:
-??? IDK why the register form had ID, chose to delete it kay extra work, extra kapuy, same grado
 1. Customername
 2. Gender
 3. Date of birth

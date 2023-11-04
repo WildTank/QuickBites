@@ -19,7 +19,7 @@ namespace EVEDRI_online_food_ordering
             this.CenterToScreen();
         }
 
-        accountdetailsDataContext db = new accountdetailsDataContext();
+        QuickBitesDataContext db = new QuickBitesDataContext();
 
         private void button1_Click(object sender, EventArgs e)
         {

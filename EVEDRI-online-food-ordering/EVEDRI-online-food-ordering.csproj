@@ -65,10 +65,10 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="accountdetails.designer.cs">
+    <Compile Include="QuickBites.designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>accountdetails.dbml</DependentUpon>
+      <DependentUpon>QuickBites.dbml</DependentUpon>
     </Compile>
     <Compile Include="Register.cs">
       <SubType>Form</SubType>
@@ -126,14 +126,6 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
-    <None Include="accountdetails.dbml">
-      <Generator>MSLinqToSQLGenerator</Generator>
-      <LastGenOutput>accountdetails.designer.cs</LastGenOutput>
-      <SubType>Designer</SubType>
-    </None>
-    <None Include="accountdetails.dbml.layout">
-      <DependentUpon>accountdetails.dbml</DependentUpon>
-    </None>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -143,6 +135,14 @@
       <DependentUpon>Settings.settings</DependentUpon>
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
     </Compile>
+    <None Include="QuickBites.dbml">
+      <Generator>MSLinqToSQLGenerator</Generator>
+      <LastGenOutput>QuickBites.designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="QuickBites.dbml.layout">
+      <DependentUpon>QuickBites.dbml</DependentUpon>
+    </None>
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
