@@ -1,0 +1,23 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="accountdetails" Class="accountdetailsDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=WIN-RCHA6075J8T\SQLEXPRESS;Initial Catalog=accountdetails;Integrated Security=True" SettingsObjectName="EVEDRI_online_food_ordering.Properties.Settings" SettingsPropertyName="accountdetailsConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.UserAccounts" Member="UserAccounts">
+    <Type Name="UserAccount">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="username" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="pass" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UserAccount_UserDetail" Member="UserDetails" ThisKey="id" OtherKey="id" Type="UserDetail" />
+    </Type>
+  </Table>
+  <Table Name="dbo.UserDetails" Member="UserDetails">
+    <Type Name="UserDetail">
+      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="customername" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="gender" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="dateofbirth" Type="System.DateTime" DbType="DateTime" CanBeNull="true" />
+      <Column Name="homeaddress" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="contactnumber" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="email" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Association Name="UserAccount_UserDetail" Member="UserAccount" ThisKey="id" OtherKey="id" Type="UserAccount" IsForeignKey="true" />
+    </Type>
+  </Table>
+</Database>
