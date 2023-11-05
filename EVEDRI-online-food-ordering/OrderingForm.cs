@@ -2,9 +2,11 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Runtime.CompilerServices;
+using System.Runtime.Remoting;
 using System.Security.Cryptography;
 using System.Text;
 using System.Threading.Tasks;
@@ -14,9 +16,10 @@ namespace EVEDRI_online_food_ordering
 {
     public partial class OrderingForm : Form
     {
-        string[] courseMealsIndexZero = { "Course 1", "Course 2", "Course 3" };
-        string[] drinksIndexOne = { "Drink 1", "Drink 2", "Drink 3" };
-        string[] specialtiesIndexTwo = { "Special1", "Special2", "Special3" };
+        QuickBitesDataContext db = new QuickBitesDataContext();
+        string[] courseMealsIndexZero = {"Empty"};
+        string[] drinksIndexOne = {"Empty"};
+        string[] specialtiesIndexTwo = {"Empty"};
         int currentUserID = 0;
         string currentUserName = "";
         public OrderingForm(int user_id, string user_name)
@@ -27,6 +30,11 @@ namespace EVEDRI_online_food_ordering
             this.comboBox2.SelectedIndex = 0;
             currentUserID = user_id;
             currentUserName = user_name;
+            Debug.WriteLine("Getting ready to order!");
+            var courseMealItems = from item in db.Products.ToList()
+                                  where item.category == "Course Meal"
+                                  select item.item;
+            Debug.WriteLine(courseMealItems.ElementAt(0));
         }
 
         private void button2_Click(object sender, EventArgs e)

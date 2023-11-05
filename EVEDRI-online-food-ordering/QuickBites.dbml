@@ -21,14 +21,6 @@
       <Association Name="UserAccount_UserDetail" Member="UserAccount" ThisKey="id" OtherKey="id" Type="UserAccount" IsForeignKey="true" />
     </Type>
   </Table>
-  <Table Name="dbo.Products" Member="Products">
-    <Type Name="Product">
-      <Column Name="id" Type="System.String" DbType="NVarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
-      <Column Name="item" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
-      <Association Name="Product_Order" Member="Orders" ThisKey="item" OtherKey="order_item" Type="Order" />
-    </Type>
-  </Table>
   <Table Name="dbo.Orders" Member="Orders">
     <Type Name="Order">
       <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
@@ -37,6 +29,15 @@
       <Column Name="total_price" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="UserAccount_Order" Member="UserAccount" ThisKey="customer_id" OtherKey="id" Type="UserAccount" IsForeignKey="true" />
       <Association Name="Product_Order" Member="Product" ThisKey="order_item" OtherKey="item" Type="Product" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="dbo.Products" Member="Products">
+    <Type Name="Product">
+      <Column Name="id" Type="System.String" DbType="NVarChar(3) NOT NULL" IsPrimaryKey="true" CanBeNull="false" />
+      <Column Name="category" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="item" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
+      <Column Name="price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Association Name="Product_Order" Member="Orders" ThisKey="item" OtherKey="order_item" Type="Order" />
     </Type>
   </Table>
 </Database>
