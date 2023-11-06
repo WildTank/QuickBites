@@ -145,13 +145,13 @@
     <value>True</value>
   </metadata>
   <data name="textBox1.Text" xml:space="preserve">
-    <value>Order Food You Like, Whenever You Like!
+    <value>Order food you like, whenever you like!
 
-We offer food related products and services for Filipinos nation-wide. Select from hundreds to 
+We offer food related products and services for filipinos nation-wide. Select from hundreds to 
 thousands of food items and get them 
 delivered to your doorstep!
 
-Starting an order is just a few clicks away! Order Now!</value>
+Starting an order is just a few clicks away! order now!</value>
   </data>
   <metadata name="label2.Locked" type="System.Boolean, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089">
     <value>True</value>

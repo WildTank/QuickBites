@@ -159,6 +159,7 @@ namespace EVEDRI_online_food_ordering
             this.textBox1.Location = new System.Drawing.Point(51, 152);
             this.textBox1.Multiline = true;
             this.textBox1.Name = "textBox1";
+            this.textBox1.ReadOnly = true;
             this.textBox1.Size = new System.Drawing.Size(411, 210);
             this.textBox1.TabIndex = 13;
             this.textBox1.Text = resources.GetString("textBox1.Text");

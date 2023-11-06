@@ -18,3 +18,8 @@ Create Another Table For Food:
 - course meal
 - drinks
 - specialties
+
+Create Another Table for Orders:
+- item ordered
+- customer
+- price
