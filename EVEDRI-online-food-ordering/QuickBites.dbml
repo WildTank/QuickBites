@@ -32,10 +32,12 @@
   </Table>
   <Table Name="dbo.Orders" Member="Orders">
     <Type Name="Order">
-      <Column Name="id" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="queue_number" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="order_date" Type="System.DateTime" DbType="Date" CanBeNull="true" />
       <Column Name="customer_id" Type="System.Int32" DbType="Int" CanBeNull="true" />
       <Column Name="order_item" Type="System.String" DbType="NVarChar(255)" CanBeNull="true" />
-      <Column Name="total_price" Type="System.Double" DbType="Float" CanBeNull="true" />
+      <Column Name="order_quantity" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="quantified_price" Type="System.Double" DbType="Float" CanBeNull="true" />
       <Association Name="UserAccount_Order" Member="UserAccount" ThisKey="customer_id" OtherKey="id" Type="UserAccount" IsForeignKey="true" />
       <Association Name="Product_Order" Member="Product" ThisKey="order_item" OtherKey="item" Type="Product" IsForeignKey="true" />
     </Type>

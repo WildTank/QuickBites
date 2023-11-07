@@ -83,6 +83,8 @@ namespace EVEDRI_online_food_ordering
             // handles quantity
             string quantity = this.textBox1.Text;
             int orderQuantity;
+            string orderItemName = comboBox2.Text;
+            var price = db.Products.Where(i => i.item == orderItemName).Select(i => i.price).FirstOrDefault();
             if (!int.TryParse(quantity, out orderQuantity))
             {
                 this.textBox1.Text = "Input invalid";
@@ -95,12 +97,31 @@ namespace EVEDRI_online_food_ordering
             // handles adding order item to order list
             if (orderDetailsFull)
             {
-                string orderItemName = comboBox2.Text;
-                this.listBox1.Items.Add($"{orderItemName} ({orderQuantity})");
-                var price = db.Products.Where(i => i.item == orderItemName).Select(i => i.price).FirstOrDefault();
-                totalPrice += Convert.ToDouble(price) * orderQuantity;
+                DateTime date = DateTime.Now;
+                double quantifiedPrice = Convert.ToDouble(price) * orderQuantity;
+                this.listBox1.Items.Add($"{orderItemName} ({orderQuantity}) - ₱{quantifiedPrice}");
+                totalPrice += quantifiedPrice;
                 this.label2.Text = totalPrice.ToString();
+                // preparing orders to send to database
+                Order no = new Order
+                {
+                    order_date = date,
+                    customer_id = currentUserID,
+                    order_item = orderItemName,
+                    order_quantity = orderQuantity,
+                    quantified_price = quantifiedPrice,
+                };
+                db.Orders.InsertOnSubmit(no);
             }
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            // place order button
+            db.SubmitChanges();
+            this.listBox1.Items.Clear();
+            totalPrice = 0.00;
+            this.label2.Text = totalPrice.ToString();
         }
     }
 }

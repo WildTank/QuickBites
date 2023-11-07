@@ -692,13 +692,17 @@ namespace EVEDRI_online_food_ordering
 		
 		private static PropertyChangingEventArgs emptyChangingEventArgs = new PropertyChangingEventArgs(String.Empty);
 		
-		private int _id;
+		private int _queue_number;
+		
+		private System.Nullable<System.DateTime> _order_date;
 		
 		private System.Nullable<int> _customer_id;
 		
 		private string _order_item;
 		
-		private System.Nullable<double> _total_price;
+		private System.Nullable<int> _order_quantity;
+		
+		private System.Nullable<double> _quantified_price;
 		
 		private EntityRef<UserAccount> _UserAccount;
 		
@@ -708,14 +712,18 @@ namespace EVEDRI_online_food_ordering
     partial void OnLoaded();
     partial void OnValidate(System.Data.Linq.ChangeAction action);
     partial void OnCreated();
-    partial void OnidChanging(int value);
-    partial void OnidChanged();
+    partial void Onqueue_numberChanging(int value);
+    partial void Onqueue_numberChanged();
+    partial void Onorder_dateChanging(System.Nullable<System.DateTime> value);
+    partial void Onorder_dateChanged();
     partial void Oncustomer_idChanging(System.Nullable<int> value);
     partial void Oncustomer_idChanged();
     partial void Onorder_itemChanging(string value);
     partial void Onorder_itemChanged();
-    partial void Ontotal_priceChanging(System.Nullable<double> value);
-    partial void Ontotal_priceChanged();
+    partial void Onorder_quantityChanging(System.Nullable<int> value);
+    partial void Onorder_quantityChanged();
+    partial void Onquantified_priceChanging(System.Nullable<double> value);
+    partial void Onquantified_priceChanged();
     #endregion
 		
 		public Order()
@@ -725,22 +733,42 @@ namespace EVEDRI_online_food_ordering
 			OnCreated();
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_id", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
-		public int id
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_queue_number", AutoSync=AutoSync.OnInsert, DbType="Int NOT NULL IDENTITY", IsPrimaryKey=true, IsDbGenerated=true)]
+		public int queue_number
 		{
 			get
 			{
-				return this._id;
+				return this._queue_number;
 			}
 			set
 			{
-				if ((this._id != value))
+				if ((this._queue_number != value))
 				{
-					this.OnidChanging(value);
+					this.Onqueue_numberChanging(value);
 					this.SendPropertyChanging();
-					this._id = value;
-					this.SendPropertyChanged("id");
-					this.OnidChanged();
+					this._queue_number = value;
+					this.SendPropertyChanged("queue_number");
+					this.Onqueue_numberChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_date", DbType="Date")]
+		public System.Nullable<System.DateTime> order_date
+		{
+			get
+			{
+				return this._order_date;
+			}
+			set
+			{
+				if ((this._order_date != value))
+				{
+					this.Onorder_dateChanging(value);
+					this.SendPropertyChanging();
+					this._order_date = value;
+					this.SendPropertyChanged("order_date");
+					this.Onorder_dateChanged();
 				}
 			}
 		}
@@ -793,22 +821,42 @@ namespace EVEDRI_online_food_ordering
 			}
 		}
 		
-		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_total_price", DbType="Float")]
-		public System.Nullable<double> total_price
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_order_quantity", DbType="Int")]
+		public System.Nullable<int> order_quantity
 		{
 			get
 			{
-				return this._total_price;
+				return this._order_quantity;
 			}
 			set
 			{
-				if ((this._total_price != value))
+				if ((this._order_quantity != value))
 				{
-					this.Ontotal_priceChanging(value);
+					this.Onorder_quantityChanging(value);
 					this.SendPropertyChanging();
-					this._total_price = value;
-					this.SendPropertyChanged("total_price");
-					this.Ontotal_priceChanged();
+					this._order_quantity = value;
+					this.SendPropertyChanged("order_quantity");
+					this.Onorder_quantityChanged();
+				}
+			}
+		}
+		
+		[global::System.Data.Linq.Mapping.ColumnAttribute(Storage="_quantified_price", DbType="Float")]
+		public System.Nullable<double> quantified_price
+		{
+			get
+			{
+				return this._quantified_price;
+			}
+			set
+			{
+				if ((this._quantified_price != value))
+				{
+					this.Onquantified_priceChanging(value);
+					this.SendPropertyChanging();
+					this._quantified_price = value;
+					this.SendPropertyChanged("quantified_price");
+					this.Onquantified_priceChanged();
 				}
 			}
 		}

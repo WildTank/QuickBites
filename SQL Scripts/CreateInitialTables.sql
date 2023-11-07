@@ -26,10 +26,12 @@ CREATE TABLE Products (
 );
 
 CREATE TABLE Orders (
-	id INT PRIMARY KEY IDENTITY,
+	queue_number INT PRIMARY KEY IDENTITY,
+	order_date DATE,
 	customer_id INT,
 	order_item NVARCHAR(255),
-	total_price FLOAT,
+	order_quantity INT,
+	quantified_price FLOAT,
 	FOREIGN KEY (customer_id) REFERENCES UserAccounts(id),
 	FOREIGN KEY (order_item) REFERENCES Products(item)
 );
@@ -58,8 +60,8 @@ VALUES
 	/*B - Drinks*/
 	('B1', 'Drinks', 'Iced Tea', '29.00'),
 	('B2', 'Drinks', 'Lemon Juice', '29.00'),
-	('B3', 'Drinks', 'Coca Cola', '24.99'),
-	('B4', 'Drinks', 'Sprite', '24.99'),
+	('B3', 'Drinks', 'Coca Cola', '24.00'),
+	('B4', 'Drinks', 'Sprite', '24.00'),
 	('B5', 'Drinks', 'Iced Coffee', '34.00'),
 	('B6', 'Drinks', 'Sparkling Water', '24.00'), /* LEL */
 	/*C - Specialties*/
