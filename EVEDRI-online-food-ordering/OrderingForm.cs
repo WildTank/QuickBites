@@ -17,24 +17,32 @@ namespace EVEDRI_online_food_ordering
     public partial class OrderingForm : Form
     {
         QuickBitesDataContext db = new QuickBitesDataContext();
-        string[] courseMealsIndexZero = {"Empty"};
-        string[] drinksIndexOne = {"Empty"};
-        string[] specialtiesIndexTwo = {"Empty"};
+        List<string> courseMealsIndexZero = new List<string>();
+        List<string> drinksIndexOne = new List<string>();
+        List<string> specialtiesIndexTwo = new List<string>();
         int currentUserID = 0;
         string currentUserName = "";
         public OrderingForm(int user_id, string user_name)
         {
             InitializeComponent();
             this.CenterToScreen();
-            this.comboBox1.SelectedIndex = 0;
-            this.comboBox2.SelectedIndex = 0;
             currentUserID = user_id;
             currentUserName = user_name;
             Debug.WriteLine("Getting ready to order!");
             var courseMealItems = from item in db.Products.ToList()
                                   where item.category == "Course Meal"
                                   select item.item;
-            Debug.WriteLine(courseMealItems.ElementAt(0));
+            var drinkItems = from item in db.Products.ToList()
+                             where item.category == "Drinks"
+                             select item.item;
+            var specialtyItems = from item in db.Products.ToList()
+                                 where item.category == "Specialties"
+                                 select item.item;
+            courseMealsIndexZero.AddRange(courseMealItems);
+            drinksIndexOne.AddRange(drinkItems);
+            specialtiesIndexTwo.AddRange(specialtyItems);
+            this.comboBox1.SelectedIndex = 0;
+            this.comboBox2.SelectedIndex = 0;
         }
 
         private void button2_Click(object sender, EventArgs e)
@@ -52,13 +60,13 @@ namespace EVEDRI_online_food_ordering
             switch (comboBox1.SelectedIndex)
             {
                 case 0:
-                    comboBox2.Items.AddRange(courseMealsIndexZero);
+                    comboBox2.Items.AddRange(courseMealsIndexZero.ToArray());
                     break;
                 case 1:
-                    comboBox2.Items.AddRange(drinksIndexOne);
+                    comboBox2.Items.AddRange(drinksIndexOne.ToArray());
                     break;
                 case 2:
-                    comboBox2.Items.AddRange(specialtiesIndexTwo);
+                    comboBox2.Items.AddRange(specialtiesIndexTwo.ToArray());
                     break;
                 default:
                     break;
@@ -66,6 +74,7 @@ namespace EVEDRI_online_food_ordering
             this.comboBox2.SelectedIndex = 0;
         }
 
+        double totalPrice = 0.00;
         private void button1_Click(object sender, EventArgs e)
         {
             // add item button
@@ -88,6 +97,9 @@ namespace EVEDRI_online_food_ordering
             {
                 string orderItemName = comboBox2.Text;
                 this.listBox1.Items.Add($"{orderItemName} ({orderQuantity})");
+                var price = db.Products.Where(i => i.item == orderItemName).Select(i => i.price).FirstOrDefault();
+                totalPrice += Convert.ToDouble(price) * orderQuantity;
+                this.label2.Text = totalPrice.ToString();
             }
         }
     }
