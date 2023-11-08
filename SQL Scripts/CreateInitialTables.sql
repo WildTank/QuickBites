@@ -45,7 +45,7 @@ INSERT INTO UserDetails (customername, gender, dateofbirth,  homeaddress, contac
 VALUES
 	('Administrator', 'Male', '08-25-2004', 'In Your Walls', '09694206969', 'Macrohard@gmail.com');
 
-/* FOOD PRODUCTS (AT LEAST 6 EACH CATEGORY)*/
+/* FOOD PRODUCTS (AT LEAST 6 ITEMS IN EACH CATEGORY TO CORRESPOND WITH PRODUCTS PAGE)*/
 INSERT INTO Products (id, category, item, price)
 VALUES
 	/* Half-ass menu to test the order feature */
