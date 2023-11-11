@@ -23,6 +23,7 @@ CREATE TABLE Products (
 	category NVARCHAR(255),
 	item NVARCHAR(255) UNIQUE,
 	price FLOAT,
+	img VARBINARY(MAX)
 );
 
 CREATE TABLE Orders (
@@ -49,7 +50,6 @@ VALUES
 INSERT INTO Products (id, category, item, price)
 VALUES
 	/* Half-ass menu to test the order feature */
-	/* Please change menu for the better (Also change the products page images and text labels)*/
 	/*A - Course Meals*/
 	('A1', 'Course Meal', 'Adobo', '119.00'),
 	('A2', 'Course Meal', 'Crispy Pata', '399.00'),
@@ -71,3 +71,5 @@ VALUES
 	('C4', 'Specialties', 'Humba', '59.00'),
 	('C5', 'Specialties', 'Bihon', '39.00'),
 	('C6', 'Specialties', 'Lumpia', '29.00');
+
+

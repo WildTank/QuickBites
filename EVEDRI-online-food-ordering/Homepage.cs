@@ -8,6 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
 
 namespace EVEDRI_online_food_ordering
 {
@@ -33,8 +34,8 @@ namespace EVEDRI_online_food_ordering
                          where item.category == "Drinks"
                          select item.item;
             var specialties = from item in db.Products.ToList()
-                         where item.category == "Specialties"
-                         select item.item;
+                              where item.category == "Specialties"
+                              select item.item;
             courseMealList.AddRange(courseMeal);
             drinksList.AddRange(drinks);
             specialtiesList.AddRange(specialties);
@@ -74,6 +75,18 @@ namespace EVEDRI_online_food_ordering
                         groupBoxLabelIndex++;
                     }
                 }
+            }
+            var adoboImage = db.Products.Where(i => i.item == "Adobo").Select(i => i.img.ToArray()).FirstOrDefault();
+            Image img = ByteArrayToImage(adoboImage);
+            this.pictureBox6.Image = img;
+        }
+
+        public static Image ByteArrayToImage(byte[] byteArray) // arigatou chatGPT(prolly from web scraped stackoverflow info)!!!
+        {
+            using (MemoryStream ms = new MemoryStream(byteArray))
+            {
+                Image image = Image.FromStream(ms);
+                return image;
             }
         }
 

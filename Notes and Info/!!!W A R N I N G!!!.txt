@@ -3,4 +3,4 @@ WARNING!!!
 No self-made classes, methods, and functions were used.
 Code is hard to read (but still works).
 
-NOTE: Changed EVERDRI to QuickBites
+NOTE: Preferred QuickBites than EVERDRI

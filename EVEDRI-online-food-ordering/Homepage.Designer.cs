@@ -30,8 +30,8 @@
         {
             this.panel1 = new System.Windows.Forms.Panel();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.label19 = new System.Windows.Forms.Label();
             this.button1 = new System.Windows.Forms.Button();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.panel8 = new System.Windows.Forms.Panel();
@@ -57,7 +57,6 @@
             this.pictureBox8 = new System.Windows.Forms.PictureBox();
             this.pictureBox9 = new System.Windows.Forms.PictureBox();
             this.panel10 = new System.Windows.Forms.Panel();
-            this.label19 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.panel11 = new System.Windows.Forms.Panel();
             this.label10 = new System.Windows.Forms.Label();
@@ -89,8 +88,8 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.panel2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
             this.panel8.SuspendLayout();
@@ -129,6 +128,7 @@
             this.panel19.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).BeginInit();
             this.panel20.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // panel1
@@ -149,6 +149,19 @@
             this.panel2.Size = new System.Drawing.Size(887, 60);
             this.panel2.TabIndex = 7;
             // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.label19.Font = new System.Drawing.Font("Berlin Sans FB", 16F);
+            this.label19.ForeColor = System.Drawing.Color.Snow;
+            this.label19.Location = new System.Drawing.Point(12, 18);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(110, 24);
+            this.label19.TabIndex = 18;
+            this.label19.Text = "QuickBites";
+            this.label19.Click += new System.EventHandler(this.label19_Click);
+            // 
             // button1
             // 
             this.button1.BackColor = System.Drawing.Color.Brown;
@@ -163,15 +176,6 @@
             this.button1.Text = "Start Ordering";
             this.button1.UseVisualStyleBackColor = false;
             this.button1.Click += new System.EventHandler(this.button1_Click);
-            // 
-            // pictureBox1
-            // 
-            this.pictureBox1.BackColor = System.Drawing.Color.Brown;
-            this.pictureBox1.Location = new System.Drawing.Point(16, 30);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
-            this.pictureBox1.TabIndex = 19;
-            this.pictureBox1.TabStop = false;
             // 
             // groupBox1
             // 
@@ -431,19 +435,6 @@
             this.panel10.Size = new System.Drawing.Size(293, 100);
             this.panel10.TabIndex = 27;
             // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.label19.Font = new System.Drawing.Font("Berlin Sans FB", 16F);
-            this.label19.ForeColor = System.Drawing.Color.Snow;
-            this.label19.Location = new System.Drawing.Point(12, 18);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(110, 24);
-            this.label19.TabIndex = 18;
-            this.label19.Text = "QuickBites";
-            this.label19.Click += new System.EventHandler(this.label19_Click);
-            // 
             // label11
             // 
             this.label11.AutoSize = true;
@@ -577,7 +568,7 @@
             this.groupBox3.Size = new System.Drawing.Size(863, 349);
             this.groupBox3.TabIndex = 32;
             this.groupBox3.TabStop = false;
-            this.groupBox3.Text = "`";
+            this.groupBox3.Text = "SPECIALTIES";
             // 
             // pictureBox13
             // 
@@ -747,6 +738,16 @@
             this.label13.TabIndex = 12;
             this.label13.Text = "Food Item";
             // 
+            // pictureBox1
+            // 
+            this.pictureBox1.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox1.InitialImage = null;
+            this.pictureBox1.Location = new System.Drawing.Point(16, 30);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(100, 100);
+            this.pictureBox1.TabIndex = 19;
+            this.pictureBox1.TabStop = false;
+            // 
             // Homepage
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -764,7 +765,6 @@
             this.Text = "Dashboard";
             this.panel2.ResumeLayout(false);
             this.panel2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.groupBox1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).EndInit();
             this.panel8.ResumeLayout(false);
@@ -821,6 +821,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox18)).EndInit();
             this.panel20.ResumeLayout(false);
             this.panel20.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -828,7 +829,6 @@
         #endregion
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Panel panel2;
-        private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Panel panel3;
         private System.Windows.Forms.PictureBox pictureBox6;
@@ -887,5 +887,6 @@
         private System.Windows.Forms.Label label15;
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
+        private System.Windows.Forms.PictureBox pictureBox1;
     }
 }
