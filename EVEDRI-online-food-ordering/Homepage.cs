@@ -39,7 +39,7 @@ namespace EVEDRI_online_food_ordering
             courseMealList.AddRange(courseMeal);
             drinksList.AddRange(drinks);
             specialtiesList.AddRange(specialties);
-            // dynamic product page menu
+            // dynamic products page/food menu
             int groupBoxLabelIndex = 0;
             foreach (Control c in groupBox1.Controls)
             {
@@ -76,12 +76,36 @@ namespace EVEDRI_online_food_ordering
                     }
                 }
             }
-            var adoboImage = db.Products.Where(i => i.item == "Adobo").Select(i => i.img.ToArray()).FirstOrDefault();
-            Image img = ByteArrayToImage(adoboImage);
-            this.pictureBox6.Image = img;
+            var courseMealImages = (from item in db.Products
+                                   where item.category == "Course Meal"
+                                   select item.img.ToArray()).ToArray();
+            var drinksImages = (from item in db.Products
+                                   where item.category == "Drinks"
+                                   select item.img.ToArray()).ToArray();
+            var specialtiesImages = (from item in db.Products
+                                   where item.category == "Specialties"
+                                   select item.img.ToArray()).ToArray();
+            int imageIndex = 0;
+            foreach (PictureBox c in groupBox1.Controls.Cast<Control>().Where(c => c.GetType() == typeof(PictureBox))) // referenced PsychoCoder from stackoverflow
+            {
+                c.Image = ByteArrayToImage(courseMealImages.ElementAt(imageIndex));
+                imageIndex++;
+            }
+            imageIndex = 0;
+            foreach (PictureBox c in groupBox2.Controls.Cast<Control>().Where(c => c.GetType() == typeof(PictureBox)))
+            {
+                c.Image = ByteArrayToImage(drinksImages.ElementAt(imageIndex));
+                imageIndex++;
+            }
+            imageIndex = 0;
+            foreach (PictureBox c in groupBox3.Controls.Cast<Control>().Where(c => c.GetType() == typeof(PictureBox)))
+            {
+                c.Image = ByteArrayToImage(specialtiesImages.ElementAt(imageIndex));
+                imageIndex++;
+            }
         }
 
-        public static Image ByteArrayToImage(byte[] byteArray) // arigatou chatGPT(prolly from web scraped stackoverflow info)!!!
+        public static Image ByteArrayToImage(byte[] byteArray) // Arigatou chatGPT sensei!!! >.< (prolly web scraped from stackoverflow)
         {
             using (MemoryStream ms = new MemoryStream(byteArray))
             {

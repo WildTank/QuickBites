@@ -47,29 +47,47 @@ VALUES
 	('Administrator', 'Male', '08-25-2004', 'In Your Walls', '09694206969', 'Macrohard@gmail.com');
 
 /* FOOD PRODUCTS (AT LEAST 6 ITEMS IN EACH CATEGORY TO CORRESPOND WITH PRODUCTS PAGE)*/
-INSERT INTO Products (id, category, item, price)
+INSERT INTO Products (id, category, item, price, img)
 VALUES
 	/* Half-ass menu to test the order feature */
 	/*A - Course Meals*/
-	('A1', 'Course Meal', 'Adobo', '119.00'),
-	('A2', 'Course Meal', 'Crispy Pata', '399.00'),
-	('A3', 'Course Meal', 'Escabeche', '79.00'),
-	('A4', 'Course Meal', 'Liempo', '299.00'),
-	('A5', 'Course Meal', 'Sisig', '99.00'),
-	('A6', 'Course Meal', 'Tapa', '119.00'),
+	('A1', 'Course Meal', 'Adobo', '119.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\adobo.png', SINGLE_BLOB) AS BLOB)),
+	('A2', 'Course Meal', 'Crispy Pata', '399.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\crispypata.png', SINGLE_BLOB) AS BLOB)),
+	('A3', 'Course Meal', 'Escabeche', '79.00', 
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\escabeche.png', SINGLE_BLOB) AS BLOB)),
+	('A4', 'Course Meal', 'Liempo', '299.00', 
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\liempo.png', SINGLE_BLOB) AS BLOB)),
+	('A5', 'Course Meal', 'Sisig', '99.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\sisig.png', SINGLE_BLOB) AS BLOB)),
+	('A6', 'Course Meal', 'Tapa', '119.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\tapa.png', SINGLE_BLOB) AS BLOB)),
 	/*B - Drinks*/
-	('B1', 'Drinks', 'Iced Tea', '29.00'),
-	('B2', 'Drinks', 'Lemon Juice', '29.00'),
-	('B3', 'Drinks', 'Coca Cola', '24.00'),
-	('B4', 'Drinks', 'Sprite', '24.00'),
-	('B5', 'Drinks', 'Iced Coffee', '34.00'),
-	('B6', 'Drinks', 'Sparkling Water', '24.00'), /* LEL */
+	('B1', 'Drinks', 'Iced Tea', '29.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\icedtea.png', SINGLE_BLOB) AS BLOB)),
+	('B2', 'Drinks', 'Lemon Juice', '29.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\lemonjuice.png', SINGLE_BLOB) AS BLOB)),
+	('B3', 'Drinks', 'Coca Cola', '24.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\cocacola.png', SINGLE_BLOB) AS BLOB)),
+	('B4', 'Drinks', 'Sprite', '24.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\sprite.png', SINGLE_BLOB) AS BLOB)),
+	('B5', 'Drinks', 'Iced Coffee', '34.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\icedcoffee.png', SINGLE_BLOB) AS BLOB)),
+	('B6', 'Drinks', 'Sparkling Water', '24.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\sparklingwater.png', SINGLE_BLOB) AS BLOB)), /* LEL */
 	/*C - Specialties*/
-	('C1', 'Specialties', 'Batchoy', '79.00'),
-	('C2', 'Specialties', 'Bicol Express', '49.00'),
-	('C3', 'Specialties', 'Pochero', '79.00'),
-	('C4', 'Specialties', 'Humba', '59.00'),
-	('C5', 'Specialties', 'Bihon', '39.00'),
-	('C6', 'Specialties', 'Lumpia', '29.00');
+	('C1', 'Specialties', 'Batchoy', '79.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\batchoy.png', SINGLE_BLOB) AS BLOB)),
+	('C2', 'Specialties', 'Bicol Express', '49.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\bicolexpress.png', SINGLE_BLOB) AS BLOB)),
+	('C3', 'Specialties', 'Pochero', '79.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\pochero.png', SINGLE_BLOB) AS BLOB)),
+	('C4', 'Specialties', 'Humba', '59.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\humba.png', SINGLE_BLOB) AS BLOB)),
+	('C5', 'Specialties', 'Bihon', '39.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\bihon.png', SINGLE_BLOB) AS BLOB)),
+	('C6', 'Specialties', 'Lumpia', '29.00',
+	(SELECT BulkColumn FROM OPENROWSET(BULK 'C:\Users\Administrator\Downloads\QuickBites\images\lumpia.png', SINGLE_BLOB) AS BLOB));
 
 
