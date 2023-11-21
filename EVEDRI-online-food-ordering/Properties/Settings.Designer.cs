@@ -55,5 +55,16 @@ namespace EVEDRI_online_food_ordering.Properties {
                 return ((string)(this["QuickBitesDatabaseConnectionString"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.ConnectionString)]
+        [global::System.Configuration.DefaultSettingValueAttribute("Data Source=WIN-63Q69S63RJL\\SQLEXPRESS;Initial Catalog=QuickBites;Integrated Secu" +
+            "rity=True")]
+        public string QuickBitesConnectionString1 {
+            get {
+                return ((string)(this["QuickBitesConnectionString1"]));
+            }
+        }
     }
 }
