@@ -39,6 +39,21 @@ namespace EVEDRI_online_food_ordering
             courseMealList.AddRange(courseMeal);
             drinksList.AddRange(drinks);
             specialtiesList.AddRange(specialties);
+            List<double> courseMealListPrice = new List<double>();
+            List<double> drinksListPrice = new List<double>();
+            List<double> specialtiesListPrice = new List<double>();
+            var courseMealPrice = from item in db.Products.ToList()
+                             where item.category == "Course Meal"
+                             select item.price;
+            var drinksPrice = from item in db.Products.ToList()
+                         where item.category == "Drinks"
+                         select item.price;
+            var specialtiesPrice = from item in db.Products.ToList()
+                              where item.category == "Specialties"
+                              select item.price;
+            courseMealListPrice.AddRange(courseMealPrice);
+            drinksListPrice.AddRange(drinksPrice);
+            specialtiesListPrice.AddRange(specialtiesPrice);
             // dynamic products page/food menu
             int groupBoxLabelIndex = 0;
             foreach (Control c in groupBox1.Controls)
@@ -47,8 +62,14 @@ namespace EVEDRI_online_food_ordering
                 {
                     foreach (Control d in c.Controls)
                     {
-                        d.Text = courseMealList.ElementAt(groupBoxLabelIndex);
-                        groupBoxLabelIndex++;
+                        if (d.Text == "Food Item")
+                        {
+                            d.Text = courseMealList.ElementAt(groupBoxLabelIndex);
+                            groupBoxLabelIndex++;
+                        } else
+                        {
+                            d.Text = "₱" + courseMealListPrice.ElementAt(groupBoxLabelIndex).ToString() + ".00";
+                        }
                     }
                 }
             }
@@ -59,8 +80,15 @@ namespace EVEDRI_online_food_ordering
                 {
                     foreach (Control d in c.Controls)
                     {
-                        d.Text = drinksList.ElementAt(groupBoxLabelIndex);
-                        groupBoxLabelIndex++;
+                        if (d.Text == "Food Item")
+                        {
+                            d.Text = drinksList.ElementAt(groupBoxLabelIndex);
+                            groupBoxLabelIndex++;
+                        }
+                        else
+                        {
+                            d.Text = "₱" + drinksPrice.ElementAt(groupBoxLabelIndex).ToString() + ".00";
+                        }
                     }
                 }
             }
@@ -71,8 +99,15 @@ namespace EVEDRI_online_food_ordering
                 {
                     foreach (Control d in c.Controls)
                     {
-                        d.Text = specialtiesList.ElementAt(groupBoxLabelIndex);
-                        groupBoxLabelIndex++;
+                        if (d.Text == "Food Item")
+                        {
+                            d.Text = specialtiesList.ElementAt(groupBoxLabelIndex);
+                            groupBoxLabelIndex++;
+                        }
+                        else
+                        {
+                            d.Text = "₱" + specialtiesPrice.ElementAt(groupBoxLabelIndex).ToString() + ".00";
+                        }
                     }
                 }
             }

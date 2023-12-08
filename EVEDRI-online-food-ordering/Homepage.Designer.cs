@@ -89,6 +89,24 @@
             this.pictureBox18 = new System.Windows.Forms.PictureBox();
             this.panel20 = new System.Windows.Forms.Panel();
             this.label13 = new System.Windows.Forms.Label();
+            this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.label22 = new System.Windows.Forms.Label();
+            this.label23 = new System.Windows.Forms.Label();
+            this.label24 = new System.Windows.Forms.Label();
+            this.label25 = new System.Windows.Forms.Label();
+            this.label26 = new System.Windows.Forms.Label();
+            this.label27 = new System.Windows.Forms.Label();
+            this.label28 = new System.Windows.Forms.Label();
+            this.label29 = new System.Windows.Forms.Label();
+            this.label30 = new System.Windows.Forms.Label();
+            this.label31 = new System.Windows.Forms.Label();
+            this.label32 = new System.Windows.Forms.Label();
+            this.label33 = new System.Windows.Forms.Label();
+            this.label34 = new System.Windows.Forms.Label();
+            this.label35 = new System.Windows.Forms.Label();
+            this.label36 = new System.Windows.Forms.Label();
+            this.label37 = new System.Windows.Forms.Label();
             this.panel2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox6)).BeginInit();
@@ -202,6 +220,7 @@
             // pictureBox6
             // 
             this.pictureBox6.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox6.Location = new System.Drawing.Point(483, 242);
             this.pictureBox6.Name = "pictureBox6";
             this.pictureBox6.Size = new System.Drawing.Size(100, 100);
@@ -211,6 +230,8 @@
             // panel8
             // 
             this.panel8.BackColor = System.Drawing.Color.IndianRed;
+            this.panel8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel8.Controls.Add(this.label25);
             this.panel8.Controls.Add(this.label6);
             this.panel8.Location = new System.Drawing.Point(483, 242);
             this.panel8.Name = "panel8";
@@ -230,6 +251,7 @@
             // pictureBox5
             // 
             this.pictureBox5.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox5.Location = new System.Drawing.Point(483, 136);
             this.pictureBox5.Name = "pictureBox5";
             this.pictureBox5.Size = new System.Drawing.Size(100, 100);
@@ -239,6 +261,7 @@
             // pictureBox4
             // 
             this.pictureBox4.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox4.Location = new System.Drawing.Point(483, 30);
             this.pictureBox4.Name = "pictureBox4";
             this.pictureBox4.Size = new System.Drawing.Size(100, 100);
@@ -248,6 +271,8 @@
             // panel7
             // 
             this.panel7.BackColor = System.Drawing.Color.IndianRed;
+            this.panel7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel7.Controls.Add(this.label24);
             this.panel7.Controls.Add(this.label5);
             this.panel7.Location = new System.Drawing.Point(483, 136);
             this.panel7.Name = "panel7";
@@ -267,6 +292,8 @@
             // panel6
             // 
             this.panel6.BackColor = System.Drawing.Color.IndianRed;
+            this.panel6.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel6.Controls.Add(this.label23);
             this.panel6.Controls.Add(this.label4);
             this.panel6.Location = new System.Drawing.Point(483, 30);
             this.panel6.Name = "panel6";
@@ -286,6 +313,7 @@
             // pictureBox3
             // 
             this.pictureBox3.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox3.Location = new System.Drawing.Point(16, 242);
             this.pictureBox3.Name = "pictureBox3";
             this.pictureBox3.Size = new System.Drawing.Size(100, 100);
@@ -295,6 +323,7 @@
             // pictureBox2
             // 
             this.pictureBox2.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox2.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox2.Location = new System.Drawing.Point(16, 136);
             this.pictureBox2.Name = "pictureBox2";
             this.pictureBox2.Size = new System.Drawing.Size(100, 100);
@@ -304,6 +333,8 @@
             // panel5
             // 
             this.panel5.BackColor = System.Drawing.Color.IndianRed;
+            this.panel5.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel5.Controls.Add(this.label22);
             this.panel5.Controls.Add(this.label3);
             this.panel5.Location = new System.Drawing.Point(16, 242);
             this.panel5.Name = "panel5";
@@ -323,6 +354,8 @@
             // panel4
             // 
             this.panel4.BackColor = System.Drawing.Color.IndianRed;
+            this.panel4.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel4.Controls.Add(this.label21);
             this.panel4.Controls.Add(this.label2);
             this.panel4.Location = new System.Drawing.Point(16, 136);
             this.panel4.Name = "panel4";
@@ -342,6 +375,7 @@
             // pictureBox1
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox1.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox1.InitialImage = null;
             this.pictureBox1.Location = new System.Drawing.Point(16, 30);
             this.pictureBox1.Name = "pictureBox1";
@@ -352,6 +386,8 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.IndianRed;
+            this.panel3.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel3.Controls.Add(this.label20);
             this.panel3.Controls.Add(this.label1);
             this.panel3.Location = new System.Drawing.Point(16, 30);
             this.panel3.Name = "panel3";
@@ -393,6 +429,7 @@
             // pictureBox7
             // 
             this.pictureBox7.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox7.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox7.Location = new System.Drawing.Point(483, 242);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(100, 100);
@@ -402,6 +439,8 @@
             // panel9
             // 
             this.panel9.BackColor = System.Drawing.Color.IndianRed;
+            this.panel9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel9.Controls.Add(this.label31);
             this.panel9.Controls.Add(this.label12);
             this.panel9.Location = new System.Drawing.Point(483, 242);
             this.panel9.Name = "panel9";
@@ -421,6 +460,7 @@
             // pictureBox8
             // 
             this.pictureBox8.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox8.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox8.Location = new System.Drawing.Point(483, 136);
             this.pictureBox8.Name = "pictureBox8";
             this.pictureBox8.Size = new System.Drawing.Size(100, 100);
@@ -430,6 +470,7 @@
             // pictureBox9
             // 
             this.pictureBox9.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox9.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox9.Location = new System.Drawing.Point(483, 30);
             this.pictureBox9.Name = "pictureBox9";
             this.pictureBox9.Size = new System.Drawing.Size(100, 100);
@@ -439,6 +480,8 @@
             // panel10
             // 
             this.panel10.BackColor = System.Drawing.Color.IndianRed;
+            this.panel10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel10.Controls.Add(this.label30);
             this.panel10.Controls.Add(this.label11);
             this.panel10.Location = new System.Drawing.Point(483, 136);
             this.panel10.Name = "panel10";
@@ -458,6 +501,8 @@
             // panel11
             // 
             this.panel11.BackColor = System.Drawing.Color.IndianRed;
+            this.panel11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel11.Controls.Add(this.label29);
             this.panel11.Controls.Add(this.label10);
             this.panel11.Location = new System.Drawing.Point(483, 30);
             this.panel11.Name = "panel11";
@@ -477,6 +522,7 @@
             // pictureBox10
             // 
             this.pictureBox10.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox10.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox10.Location = new System.Drawing.Point(16, 242);
             this.pictureBox10.Name = "pictureBox10";
             this.pictureBox10.Size = new System.Drawing.Size(100, 100);
@@ -486,6 +532,7 @@
             // pictureBox11
             // 
             this.pictureBox11.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox11.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox11.Location = new System.Drawing.Point(16, 136);
             this.pictureBox11.Name = "pictureBox11";
             this.pictureBox11.Size = new System.Drawing.Size(100, 100);
@@ -495,6 +542,8 @@
             // panel12
             // 
             this.panel12.BackColor = System.Drawing.Color.IndianRed;
+            this.panel12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel12.Controls.Add(this.label28);
             this.panel12.Controls.Add(this.label9);
             this.panel12.Location = new System.Drawing.Point(16, 242);
             this.panel12.Name = "panel12";
@@ -514,6 +563,8 @@
             // panel13
             // 
             this.panel13.BackColor = System.Drawing.Color.IndianRed;
+            this.panel13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel13.Controls.Add(this.label27);
             this.panel13.Controls.Add(this.label8);
             this.panel13.Location = new System.Drawing.Point(16, 136);
             this.panel13.Name = "panel13";
@@ -533,6 +584,7 @@
             // pictureBox12
             // 
             this.pictureBox12.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox12.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox12.Location = new System.Drawing.Point(16, 30);
             this.pictureBox12.Name = "pictureBox12";
             this.pictureBox12.Size = new System.Drawing.Size(100, 100);
@@ -542,6 +594,8 @@
             // panel14
             // 
             this.panel14.BackColor = System.Drawing.Color.IndianRed;
+            this.panel14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel14.Controls.Add(this.label26);
             this.panel14.Controls.Add(this.label7);
             this.panel14.Location = new System.Drawing.Point(16, 30);
             this.panel14.Name = "panel14";
@@ -583,6 +637,7 @@
             // pictureBox13
             // 
             this.pictureBox13.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox13.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox13.Location = new System.Drawing.Point(483, 242);
             this.pictureBox13.Name = "pictureBox13";
             this.pictureBox13.Size = new System.Drawing.Size(100, 100);
@@ -592,6 +647,8 @@
             // panel15
             // 
             this.panel15.BackColor = System.Drawing.Color.IndianRed;
+            this.panel15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel15.Controls.Add(this.label37);
             this.panel15.Controls.Add(this.label18);
             this.panel15.Location = new System.Drawing.Point(483, 242);
             this.panel15.Name = "panel15";
@@ -611,6 +668,7 @@
             // pictureBox14
             // 
             this.pictureBox14.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox14.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox14.Location = new System.Drawing.Point(483, 136);
             this.pictureBox14.Name = "pictureBox14";
             this.pictureBox14.Size = new System.Drawing.Size(100, 100);
@@ -620,6 +678,7 @@
             // pictureBox15
             // 
             this.pictureBox15.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox15.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox15.Location = new System.Drawing.Point(483, 30);
             this.pictureBox15.Name = "pictureBox15";
             this.pictureBox15.Size = new System.Drawing.Size(100, 100);
@@ -629,6 +688,8 @@
             // panel16
             // 
             this.panel16.BackColor = System.Drawing.Color.IndianRed;
+            this.panel16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel16.Controls.Add(this.label36);
             this.panel16.Controls.Add(this.label17);
             this.panel16.Location = new System.Drawing.Point(483, 136);
             this.panel16.Name = "panel16";
@@ -648,6 +709,8 @@
             // panel17
             // 
             this.panel17.BackColor = System.Drawing.Color.IndianRed;
+            this.panel17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel17.Controls.Add(this.label35);
             this.panel17.Controls.Add(this.label16);
             this.panel17.Location = new System.Drawing.Point(483, 30);
             this.panel17.Name = "panel17";
@@ -667,6 +730,7 @@
             // pictureBox16
             // 
             this.pictureBox16.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox16.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox16.Location = new System.Drawing.Point(16, 242);
             this.pictureBox16.Name = "pictureBox16";
             this.pictureBox16.Size = new System.Drawing.Size(100, 100);
@@ -676,6 +740,7 @@
             // pictureBox17
             // 
             this.pictureBox17.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox17.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox17.Location = new System.Drawing.Point(16, 136);
             this.pictureBox17.Name = "pictureBox17";
             this.pictureBox17.Size = new System.Drawing.Size(100, 100);
@@ -685,6 +750,8 @@
             // panel18
             // 
             this.panel18.BackColor = System.Drawing.Color.IndianRed;
+            this.panel18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel18.Controls.Add(this.label34);
             this.panel18.Controls.Add(this.label15);
             this.panel18.Location = new System.Drawing.Point(16, 242);
             this.panel18.Name = "panel18";
@@ -704,6 +771,8 @@
             // panel19
             // 
             this.panel19.BackColor = System.Drawing.Color.IndianRed;
+            this.panel19.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel19.Controls.Add(this.label33);
             this.panel19.Controls.Add(this.label14);
             this.panel19.Location = new System.Drawing.Point(16, 136);
             this.panel19.Name = "panel19";
@@ -723,6 +792,7 @@
             // pictureBox18
             // 
             this.pictureBox18.BackColor = System.Drawing.Color.Brown;
+            this.pictureBox18.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
             this.pictureBox18.Location = new System.Drawing.Point(16, 30);
             this.pictureBox18.Name = "pictureBox18";
             this.pictureBox18.Size = new System.Drawing.Size(100, 100);
@@ -732,6 +802,8 @@
             // panel20
             // 
             this.panel20.BackColor = System.Drawing.Color.IndianRed;
+            this.panel20.BorderStyle = System.Windows.Forms.BorderStyle.Fixed3D;
+            this.panel20.Controls.Add(this.label32);
             this.panel20.Controls.Add(this.label13);
             this.panel20.Location = new System.Drawing.Point(16, 30);
             this.panel20.Name = "panel20";
@@ -747,6 +819,204 @@
             this.label13.Size = new System.Drawing.Size(106, 24);
             this.label13.TabIndex = 12;
             this.label13.Text = "Food Item";
+            // 
+            // label20
+            // 
+            this.label20.AutoSize = true;
+            this.label20.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label20.ForeColor = System.Drawing.SystemColors.Control;
+            this.label20.Location = new System.Drawing.Point(106, 29);
+            this.label20.Name = "label20";
+            this.label20.Size = new System.Drawing.Size(69, 21);
+            this.label20.TabIndex = 1;
+            this.label20.Text = "label20";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label21.ForeColor = System.Drawing.SystemColors.Control;
+            this.label21.Location = new System.Drawing.Point(106, 29);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(63, 21);
+            this.label21.TabIndex = 2;
+            this.label21.Text = "label21";
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label22.ForeColor = System.Drawing.SystemColors.Control;
+            this.label22.Location = new System.Drawing.Point(106, 26);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(67, 21);
+            this.label22.TabIndex = 3;
+            this.label22.Text = "label22";
+            // 
+            // label23
+            // 
+            this.label23.AutoSize = true;
+            this.label23.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label23.ForeColor = System.Drawing.SystemColors.Control;
+            this.label23.Location = new System.Drawing.Point(106, 29);
+            this.label23.Name = "label23";
+            this.label23.Size = new System.Drawing.Size(67, 21);
+            this.label23.TabIndex = 4;
+            this.label23.Text = "label23";
+            // 
+            // label24
+            // 
+            this.label24.AutoSize = true;
+            this.label24.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label24.ForeColor = System.Drawing.SystemColors.Control;
+            this.label24.Location = new System.Drawing.Point(106, 29);
+            this.label24.Name = "label24";
+            this.label24.Size = new System.Drawing.Size(68, 21);
+            this.label24.TabIndex = 5;
+            this.label24.Text = "label24";
+            // 
+            // label25
+            // 
+            this.label25.AutoSize = true;
+            this.label25.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label25.ForeColor = System.Drawing.SystemColors.Control;
+            this.label25.Location = new System.Drawing.Point(106, 26);
+            this.label25.Name = "label25";
+            this.label25.Size = new System.Drawing.Size(67, 21);
+            this.label25.TabIndex = 6;
+            this.label25.Text = "label25";
+            // 
+            // label26
+            // 
+            this.label26.AutoSize = true;
+            this.label26.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label26.ForeColor = System.Drawing.SystemColors.Control;
+            this.label26.Location = new System.Drawing.Point(106, 29);
+            this.label26.Name = "label26";
+            this.label26.Size = new System.Drawing.Size(68, 21);
+            this.label26.TabIndex = 7;
+            this.label26.Text = "label26";
+            // 
+            // label27
+            // 
+            this.label27.AutoSize = true;
+            this.label27.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label27.ForeColor = System.Drawing.SystemColors.Control;
+            this.label27.Location = new System.Drawing.Point(106, 29);
+            this.label27.Name = "label27";
+            this.label27.Size = new System.Drawing.Size(66, 21);
+            this.label27.TabIndex = 8;
+            this.label27.Text = "label27";
+            // 
+            // label28
+            // 
+            this.label28.AutoSize = true;
+            this.label28.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label28.ForeColor = System.Drawing.SystemColors.Control;
+            this.label28.Location = new System.Drawing.Point(106, 29);
+            this.label28.Name = "label28";
+            this.label28.Size = new System.Drawing.Size(67, 21);
+            this.label28.TabIndex = 9;
+            this.label28.Text = "label28";
+            // 
+            // label29
+            // 
+            this.label29.AutoSize = true;
+            this.label29.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label29.ForeColor = System.Drawing.SystemColors.Control;
+            this.label29.Location = new System.Drawing.Point(106, 29);
+            this.label29.Name = "label29";
+            this.label29.Size = new System.Drawing.Size(68, 21);
+            this.label29.TabIndex = 10;
+            this.label29.Text = "label29";
+            // 
+            // label30
+            // 
+            this.label30.AutoSize = true;
+            this.label30.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label30.ForeColor = System.Drawing.SystemColors.Control;
+            this.label30.Location = new System.Drawing.Point(106, 29);
+            this.label30.Name = "label30";
+            this.label30.Size = new System.Drawing.Size(69, 21);
+            this.label30.TabIndex = 11;
+            this.label30.Text = "label30";
+            // 
+            // label31
+            // 
+            this.label31.AutoSize = true;
+            this.label31.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label31.ForeColor = System.Drawing.SystemColors.Control;
+            this.label31.Location = new System.Drawing.Point(106, 29);
+            this.label31.Name = "label31";
+            this.label31.Size = new System.Drawing.Size(63, 21);
+            this.label31.TabIndex = 12;
+            this.label31.Text = "label31";
+            // 
+            // label32
+            // 
+            this.label32.AutoSize = true;
+            this.label32.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label32.ForeColor = System.Drawing.SystemColors.Control;
+            this.label32.Location = new System.Drawing.Point(107, 29);
+            this.label32.Name = "label32";
+            this.label32.Size = new System.Drawing.Size(67, 21);
+            this.label32.TabIndex = 13;
+            this.label32.Text = "label32";
+            // 
+            // label33
+            // 
+            this.label33.AutoSize = true;
+            this.label33.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label33.ForeColor = System.Drawing.SystemColors.Control;
+            this.label33.Location = new System.Drawing.Point(107, 29);
+            this.label33.Name = "label33";
+            this.label33.Size = new System.Drawing.Size(67, 21);
+            this.label33.TabIndex = 14;
+            this.label33.Text = "label33";
+            // 
+            // label34
+            // 
+            this.label34.AutoSize = true;
+            this.label34.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label34.ForeColor = System.Drawing.SystemColors.Control;
+            this.label34.Location = new System.Drawing.Point(107, 29);
+            this.label34.Name = "label34";
+            this.label34.Size = new System.Drawing.Size(68, 21);
+            this.label34.TabIndex = 15;
+            this.label34.Text = "label34";
+            // 
+            // label35
+            // 
+            this.label35.AutoSize = true;
+            this.label35.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label35.ForeColor = System.Drawing.SystemColors.Control;
+            this.label35.Location = new System.Drawing.Point(107, 29);
+            this.label35.Name = "label35";
+            this.label35.Size = new System.Drawing.Size(67, 21);
+            this.label35.TabIndex = 16;
+            this.label35.Text = "label35";
+            // 
+            // label36
+            // 
+            this.label36.AutoSize = true;
+            this.label36.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label36.ForeColor = System.Drawing.SystemColors.Control;
+            this.label36.Location = new System.Drawing.Point(107, 29);
+            this.label36.Name = "label36";
+            this.label36.Size = new System.Drawing.Size(68, 21);
+            this.label36.TabIndex = 17;
+            this.label36.Text = "label36";
+            // 
+            // label37
+            // 
+            this.label37.AutoSize = true;
+            this.label37.Font = new System.Drawing.Font("Berlin Sans FB", 14F);
+            this.label37.ForeColor = System.Drawing.SystemColors.Control;
+            this.label37.Location = new System.Drawing.Point(107, 29);
+            this.label37.Name = "label37";
+            this.label37.Size = new System.Drawing.Size(66, 21);
+            this.label37.TabIndex = 18;
+            this.label37.Text = "label37";
             // 
             // Homepage
             // 
@@ -888,5 +1158,23 @@
         private System.Windows.Forms.Label label14;
         private System.Windows.Forms.Label label13;
         private System.Windows.Forms.PictureBox pictureBox1;
+        private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label25;
+        private System.Windows.Forms.Label label24;
+        private System.Windows.Forms.Label label23;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.Label label31;
+        private System.Windows.Forms.Label label30;
+        private System.Windows.Forms.Label label29;
+        private System.Windows.Forms.Label label28;
+        private System.Windows.Forms.Label label27;
+        private System.Windows.Forms.Label label26;
+        private System.Windows.Forms.Label label32;
+        private System.Windows.Forms.Label label37;
+        private System.Windows.Forms.Label label36;
+        private System.Windows.Forms.Label label35;
+        private System.Windows.Forms.Label label34;
+        private System.Windows.Forms.Label label33;
     }
 }
