@@ -115,9 +115,38 @@ namespace EVEDRI_online_food_ordering
             }
         }
 
+        private void printDocument1_PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+            Font font = new Font("Courier New", 12);
+            Brush brush = Brushes.Black;
+
+            // Set up the receipt layout
+            string header = "Receipt - QuickBites";
+            string line = new string('-', 40);
+            string columnHeaders = string.Format("{0,-20} {1,20}", "Product Name", "Price");
+
+            // Draw header
+            e.Graphics.DrawString(header, font, brush, new Point(100, 100));
+            e.Graphics.DrawString(line, font, brush, new Point(100, 120));
+
+            int y_coord = 140;
+            foreach (var item in listBox1.Items)
+            {
+                e.Graphics.DrawString(item.ToString(), font, brush, new Point(100, y_coord));
+                y_coord += 20;
+            }
+            e.Graphics.DrawString(line, font, brush, new Point(100, y_coord));
+            y_coord += 20;
+            e.Graphics.DrawString($"Total: {totalPrice}", font, brush, new Point(100, y_coord));
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
             // place order button
+            if (printPreviewDialog1.ShowDialog() == DialogResult.OK)
+            {
+                printDocument1.Print();
+            }
             db.SubmitChanges();
             this.listBox1.Items.Clear();
             totalPrice = 0.00;
